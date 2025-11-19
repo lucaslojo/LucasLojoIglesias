@@ -1,0 +1,2181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lucas Lojo Iglesias - København N</title>
+    <style>
+                .photography-direct-grid {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 24px;
+                    justify-content: center;
+                    margin-bottom: 40px;
+                }
+                .photography-direct-image {
+                    max-width: 320px;
+                    width: 100%;
+                    height: auto;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+                    background: #e8e8e8;
+                }
+                .work-thumb {
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                    object-fit: cover;
+                    border-radius: 6px;
+                    background: #e8e8e8;
+                }
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #FAFAFA;
+            color: #1a1a1a;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header and Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #FAFAFA;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .artist-name {
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #666666;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background-color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        /* Main Content */
+        main {
+            margin-top: 80px;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 60px 40px;
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Home Section */
+        #home {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 120px;
+        }
+
+        .hero-title {
+            font-size: 48px;
+            font-weight: 100;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            color: #666666;
+            font-weight: 300;
+            margin-bottom: 80px;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .artwork-card {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            aspect-ratio: 4/5;
+            background-color: #e8e8e8;
+            transition: transform 0.3s ease;
+        }
+
+        .artwork-card:hover {
+            transform: scale(1.02);
+        }
+
+        .artwork-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .artwork-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            padding: 20px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .artwork-card:hover .artwork-overlay {
+            transform: translateY(0);
+        }
+
+        .artwork-title {
+            font-size: 16px;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+
+        .artwork-year {
+            font-size: 14px;
+            color: #cccccc;
+        }
+
+        /* Works Section */
+        #works {
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 100;
+            letter-spacing: 1.5px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #1a1a1a;
+        }
+
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .work-item {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .work-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .work-info {
+            margin-top: 15px;
+        }
+
+        .work-title {
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+
+        .work-details {
+            font-size: 13px;
+            color: #666666;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        #about {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        .about-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            background-color: #e8e8e8;
+            overflow: hidden;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .bio-text {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .bio-text h3 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .cv-section {
+            margin-top: 60px;
+        }
+
+        .cv-category {
+            margin-bottom: 40px;
+        }
+
+        .cv-category h3 {
+            font-size: 20px;
+            font-weight: 400;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .cv-entry {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 20px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        .cv-year {
+            color: #666666;
+            font-weight: 300;
+        }
+
+        .cv-detail {
+            color: #333333;
+        }
+
+        /* Contact Section */
+        #contact {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #ffffff;
+        }
+
+        .contact-form {
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 300;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            background-color: #FAFAFA;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #666666;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border: none;
+            font-size: 14px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #333333;
+        }
+
+        .contact-info {
+            text-align: center;
+            font-size: 14px;
+            color: #666666;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            display: none;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border: 1px solid #4caf50;
+            color: #2e7d32;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(250, 250, 250, 0.98);
+            z-index: 2000;
+            padding: 40px;
+            overflow-y: auto;
+        }
+
+        .lightbox.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox-content {
+            max-width: 1000px;
+            width: 100%;
+            position: relative;
+        }
+
+        .lightbox-image {
+            width: 100%;
+            max-height: 70vh;
+            object-fit: contain;
+            background-color: #e8e8e8;
+        }
+
+        .lightbox-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .lightbox-title {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .lightbox-details {
+            font-size: 14px;
+            color: #666666;
+            line-height: 1.8;
+        }
+
+        .lightbox-close {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+            font-size: 30px;
+            color: #1a1a1a;
+            transition: color 0.3s ease;
+        }
+
+        .lightbox-close:hover {
+            color: #666666;
+        }
+
+        .lightbox-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #e0e0e0;
+            padding: 15px 20px;
+            cursor: pointer;
+            font-size: 24px;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .lightbox-nav:hover {
+            background: #ffffff;
+        }
+
+        .lightbox-prev {
+            left: 30px;
+        }
+
+        .lightbox-next {
+            right: 30px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #ffffff;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px;
+            text-align: center;
+            font-size: 13px;
+            color: #666666;
+        }
+
+        .back-to-top {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background: transparent;
+            border: 1px solid #e0e0e0;
+            color: #1a1a1a;
+            text-decoration: none;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            border-color: #1a1a1a;
+        }
+
+        /* Loading Animation */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #FAFAFA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .loader-spinner {
+            width: 50px;
+            height: 50px;
+            border: 2px solid #e0e0e0;
+            border-top-color: #1a1a1a;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 20px;
+            }
+
+            nav {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background-color: #FAFAFA;
+                border-bottom: 1px solid #e0e0e0;
+                padding: 20px;
+                transform: translateY(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            nav.active {
+                transform: translateY(0);
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -6px);
+            }
+
+            section {
+                padding: 40px 20px;
+            }
+
+            .hero-title {
+                font-size: 32px;
+            }
+
+            .hero-tagline {
+                font-size: 16px;
+                margin-bottom: 50px;
+            }
+
+            .featured-grid,
+            .works-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .cv-entry {
+                grid-template-columns: 60px 1fr;
+                gap: 15px;
+            }
+
+            .lightbox {
+                padding: 20px;
+            }
+
+            .lightbox-close {
+                top: 20px;
+                right: 20px;
+            }
+
+            .lightbox-nav {
+                padding: 10px 15px;
+                font-size: 18px;
+            }
+
+            .lightbox-prev {
+                left: 10px;
+            }
+
+            .lightbox-next {
+                right: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loader" id="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="artist-name">Lucas Lojo (Davila) Iglesias (Pampín)</div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav id="nav">
+            <ul>
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#works" class="nav-link">Works</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1 class="hero-title">Lucas L. Iglesias</h1>
+            <p class="hero-tagline">København N</p>
+            <div class="featured-grid" id="featuredGrid"></div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2 class="section-title">About</h2>
+            <div class="about-content">
+                <div class="about-image"><img src="images/lucas.JPG"></div>
+                <div class="bio-text">
+                    <h4> With an interdisciplinary background in engineering, social sciences, and musical studies, I have an interested in studying socio-technical systems and policy design aimed at advancing humanistic innovation. Recent projects and roles have included work at Planetary Health Biosolutions in the biotech sector, the metabolic engineering field, climate investments management, and exploring the power of food fermentation at Noma, DTU, Chr. Hansen, and Fermentation Corp., as well as initiatives in urban design. In the meantime, I have developed an interest in exploring the interface between science, engineering, and the arts—including an old passion for painting and visual imagery. Currently I am developing, together with colleagues, a platform to share academic and PhD-level economic research with a broader audience. Other previous work and activism have included collaborations with NGOs in Spain and Denmark, or Wikileaks LatinAmerica-Spain research, including initiatives affecting distinctive administrations in Euroasia.</h3>
+                    <p></p>
+                </div>
+            </div>
+
+        <!-- Works Section -->
+        <section id="works">
+            <h2 class="section-title">Works</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Works</button>
+                <button class="filter-btn" data-filter="Projects">Projects</button>
+                <button class="filter-btn" data-filter="Abstracts">Writings</button>
+                <button class="filter-btn" data-filter="Paintings">Paintings</button>
+                <button class="filter-btn" data-filter="Photography">Photography</button>
+            </div>
+            <div class="works-grid" id="worksGrid"></div>
+        </section>
+
+    
+
+            <div class="cv-section">
+                <div class="cv-category">
+                    <h3>Education</h3>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU</div>
+                        <div class="cv-detail">Msc Technology Entrepreneurship, Technical University of Denmark </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU</div>
+                        <div class="cv-detail">Msc courses in Sustainable Energy Sytems, Technical University of Denmark </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">ETH Zürich</div>
+                        <div class="cv-detail">Visiting Student at the department of Environemntal Systems and Policy & Architecture, ETH Zürich </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU</div>
+                        <div class="cv-detail">Bsc in General Engineering (Bioengineering), Technical University of Denmark </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">SGH</div>
+                        <div class="cv-detail">Visiting Student in International Economics, Warsaw School of Economics</div>
+                    </div>
+    
+                    <div class="cv-entry">
+                        <div class="cv-year">USC</div>
+                        <div class="cv-detail">BA in (Honours) Economics, Universidade de Santiago de Compostela </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Conservatory</div>
+                        <div class="cv-detail">Santiago de Compostela Conservatory of Music </div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Extra Curriculars</div>
+                        <div class="cv-detail"> Film Analysis and Writing (University of Vigo), 
+Politics and Economics of International Energy (SciencesPo), Quantum Mechanics (École Polytechnique) </div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="cv-category">
+                    <h3>Experiences</h3>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU Biosustain</div>
+                        <div class="cv-detail">Gene Editing Microbiome Therapeutics Analysis, 1st Biome spin-off project</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Migas</div>
+                        <div class="cv-detail">Co-founder of Fermentation Corp. (Migas), funded by the Bioinnovation Institute through Novo Holdings</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">APMM</div>
+                        <div class="cv-detail">Energy Transition Investment Management. Member of a three-person team responsible for analyzing and providing Energy Transition Sign-off on A.P. Moller-Maersk (APMM) Group’s global investment proposals and M&A cases</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU Skylab</div>
+                        <div class="cv-detail">◦ Upcycling wastefood into flavourful rich seasoning pastes and aminosauces using traditional Japanese and biotechnical tecniques
+                                • R&D of novel foods at DTU’s Foodlab under the supervision of Yi-Ting and Roberto Flore
+◦ Funding received through the Bioinnovation Institute, by the Novo Nordisk Foundation.
+◦ Selected to participate in the Skylab Ignite Accelerator Programme</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">DTU-CITA</div>
+                        <div class="cv-detail">Feasibility study: architectural applications for additive fabrication of biopolymers. In collaboration with the Centre for Information Technology and Architecture at the Royal Danish Academy</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Novonesis</div>
+                        <div class="cv-detail">Engineering Graduate in Applied R&D for Planetary Health Biosolutions.</div>
+                    </div>
+                     <div class="cv-entry">
+                        <div class="cv-year">DTU</div>
+                        <div class="cv-detail">Bachelor Project with the Department of Technology, Management and Economics, and the Novo Nordisk Center for Biosustainability</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Chr Hansen</div>
+                        <div class="cv-detail">Engineering Student Worker in AP Health Formulation</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Noma</div>
+                        <div class="cv-detail">Worked assisting the front of house and kitchen during pre-service and service and as an apprentice at the fermentation lab with the preparation of products as scoby, koji, kombucha, miso, garum, or lacto-water. This hands-on experience complemented courses in bioengineering at DTU and further work in Chr.Hansen, Novonesis, and DTU’s Foodlab</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">Mellemfolkeligt Samvirke / ActionAid Denmark</div>
+                        <div class="cv-detail">Volunteer/Living-volunteer, Involved in decisions and voting related to different social projects funded by the organization, ranging from political and feminist leadership training in Uganda to the creation of youth hubs in rural Nepal</div>
+                    </div>
+                    <div class="cv-entry">
+                        <div class="cv-year">ASIMAGA</div>
+                        <div class="cv-detail">Partner and Volunteer at ASIMAGA, National Association of People Affected by the Cri du Chat Syndrome</div>
+                    </div>
+                    
+                    
+                </div>
+
+                
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2 class="section-title">Reach me out without a doubt</h2>
+            <div class="success-message" id="successMessage">
+                Thank you for your message. I will get back to you soon.
+            </div>
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+            <div class="contact-info">
+                <p>s215244@dtu.dk</p>
+                <p>Copenhagen, Denmark</p>
+                <p></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#home" class="back-to-top">↑ Back to Top</a>
+        <p>&copy; 2025 Lucas Lojo Iglesias. All rights reserved.</p>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-nav lightbox-prev" id="lightboxPrev">‹</button>
+        <button class="lightbox-nav lightbox-next" id="lightboxNext">›</button>
+        <div class="lightbox-content">
+            <div class="lightbox-image" id="lightboxImage"></div>
+            <div class="lightbox-info">
+                <h3 class="lightbox-title" id="lightboxTitle"></h3>
+                <div class="lightbox-details" id="lightboxDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Artwork Data
+        const artworks = [
+            {
+                title: "Atelier en construcción",
+                year: "2025",
+                medium: "Oil on canvas",
+                dimensions: "150 x 100 cm",
+                category: "Paintings",
+                image: "images/Atelier.jpg"
+            },
+            {
+                title: "Lina`s room above Güell`s Garden",
+                year: "2025",
+                medium: "Oil on canvas",
+                dimensions: "100 x 73 cm",
+                category: "Paintings",
+                image: "images/Lina.jpg"
+            },
+            {
+                title: "As Brañas",
+                year: "2025",
+                medium: "Mixed media on canvas",
+                dimensions: "120 x 90 cm",
+                category: "Paintings",
+                image: "images/Branhas.jpg",
+            },
+            
+
+            {
+                title: "Fermentation Corp. (Migas)",
+                year: "2025",
+                medium: "R&D company in food fermentation, funded by the Bioinnovation Institute. Started by Leo Küehnemann and me at DTU`s Foodlab",
+                dimensions: "",
+                category: "Projects",
+                image: "images/Migas.jpg",
+            },
+            {
+                title: "Barriers to innovation in low-carbon technologies and innovation policies",
+                year: "2024",
+                medium: "DTU",
+                dimensions: "Thesis under the supervision of DTU Management and the Novo Nordisk Foundation Center for Biosustainability (DTU Biosustain). Accepted on the recommendation of Prof. julien Xavier Daubanes and Sumesh Sukumara, with Prof. Jens Weibezahn as an external supervisor from the Copenhagen Business School.: https://bit.ly/4o6Edoz",
+                category: "Abstracts",
+                image: "images/Decisive.jxl",
+            },
+            {
+                title: "Urban Design",
+                year: "2025",
+                medium: "Architectural & urban project presented with the architect Marta Morato Costa through A Fundación Ria for the reurbanisation of Pobra do Caramiñal",
+                dimensions: "",
+                category: "Projects",
+                image: "images/Pobra.jpg",
+            },
+            {
+                title: "DTU-CITA Graduate Project",
+                year: "2025",
+                medium: "Feasibility study on the architectural applications for additive fabrication of biopolymers. In collaboration with the Centre for Information Technology and Architecture at the Royal Danish Academy",
+                dimensions: "",
+                category: "Projects"
+            },
+             {
+                title: "1st Biome, DTU Biosustain",
+                year: "2025",
+                medium: "Gene Editing Microbiome Therapeutics Strategic Analysis, 1st Biome spin-off project at Morten Alexander Sommer group.",
+                dimensions: "",
+                category: "Projects",
+                image: "images/Migas.jpg",
+            },
+            {
+                title: "DTU",
+                year: "",
+                medium: "Study of potential defense applications for air-warfare challenges, with DTU Defense",
+                dimensions: "",
+                category: "Projects"
+            },
+            {
+                title: "",
+                year: "",
+                medium: "Conducted strategic analysis on regional communication networks in Central-Easter Europe and the Russian Federation, focusing on optimizing information flow and security protocols",
+                dimensions: "",
+                category: "Projects"
+            },
+            {
+                title: "",
+                year: "",
+                medium: "Stakeholder engagement and strategic assessment of cooperation and investment mechanisms in Denmark-South European partners, with emphasis on enhancing organizational information security and risk management processes",
+                dimensions: "",
+                category: "Projects"
+            },
+            
+            
+            
+            {
+                title: "Open Source: new methodological method of software development",
+                year: "2021",
+                medium: "USC",
+                dimensions: "https://www.researchgate.net/publication/373556139_Open_source_new_methodological_model_of_software_development",
+                category: "Abstracts"
+            },
+            {
+                title: "Cri du chat syndrome: characterization, genotype-phenotype review, diagnosis & genetic therapeutical approaches",
+                year: "2022",
+                medium: "DTU",
+                dimensions: "",
+                category: "Abstracts"
+            },
+            {
+                title: "Role of Communities in Post Conflict and Post Disaster Reconstruction",
+                year: "2025",
+                medium: "ETH Zürich",
+                dimensions: "",
+                category: "Abstracts"
+            },
+            {
+                title: "On Violence, in The Ministry for the Future",
+                year: "2025",
+                medium: "ETH Zürich",
+                dimensions: "",
+                category: "Abstracts"
+            },
+            {
+                title: "The scale and consequences of Hong Kong´s integration with mainland China",
+                year: "2023",
+                medium: "SGH",
+                dimensions: "",
+                category: "Abstracts"
+            },
+            {
+                title: "Debate on Drugs",
+                year: "2020",
+                medium: "",
+                dimensions: "100 x 140 cm",
+                category: "Abstracts"
+            },
+            {
+                title: "Luces de James Turrell",
+                year: "2025",
+                medium: "Mixed media on canvas",
+                dimensions: "100 x 100 cm",
+                category: "Paintings",
+                image: "images/luces.jpg"
+            },
+            {
+                title: "Los Golfos",
+                year: "2025",
+                medium: "Mixed media on canvas",
+                dimensions: "100 x 100 cm",
+                category: "Paintings",
+                image: "images/losgolfos.HEIC"
+            },
+            {
+                title: "A despedida",
+                year: "2025",
+                medium: "Oil & acrylic on canvas",
+                dimensions: "50 x 50 cm",
+                category: "Paintings",
+                image: "images/despedida.jpg"
+            },
+            {
+                title: "Boceto a las señoritas de Avignon",
+                year: "2025",
+                medium: "Mixed media on canvas",
+                dimensions: "100 x 100 cm",
+                category: "Paintings",
+                image: "images/avignon.heic"
+            },
+            {
+                title: "Untitled",
+                year: "2025",
+                medium: "Oil & acrylic on canvas",
+                dimensions: "75 x 60 cm",
+                category: "Paintings",
+                image: "images/tristura.heic"
+            },
+            {
+                title: "A mirada dos nenos tras o cristal",
+                year: "2025",
+                medium: "Mixed media on canvas",
+                dimensions: "100 x 70 cm",
+                category: "Paintings",
+                image: "images/mirada.jpg"
+            },
+            {
+                title: "Luces de Kerterminde",
+                year: "2024",
+                medium: "Mixed media on canvas",
+                dimensions: "70 x 60 cm",
+                category: "Paintings",
+                image: "images/kerterminde.HEIC"
+            },
+            {
+                title: "Installation View",
+                year: "2022",
+                medium: "Installation",
+                dimensions: "Variable dimensions",
+                category: "Installations"
+            },
+            {
+                title: "Textured Surface",
+                year: "2022",
+                medium: "Oil and sand on canvas",
+                dimensions: "110 x 130 cm",
+                category: "Mixed Media"
+            },
+            {
+                title: "Towards future net-zero climate resilient cities: lessons from Cooling Singapore, and beyond",
+                year: "2024",
+                medium: "ETH Zürich",
+                dimensions: "60 x 80 cm",
+                category: "Abstracts"
+            },
+            
+{
+    title: "Feasibility Studies of Energy Projects",
+    year: "",
+    medium: "DTU",
+    dimensions: "Evaluation of the feasibility of the Hesselø Offshore Wind Farm by analyzing its technical, regulatory, economic, and financial aspects.",
+    category: "Abstracts"
+},
+{
+    title: "Planning and Development of Wind Farms",
+    year: "",
+    medium: "DTU",
+    dimensions: "Wind Farm Project proposal in Oregon by analyzing technical, economic, financial, social, regulatory, and political landscape.",
+    category: "Abstracts"
+},
+{
+    title: "Econometric Models and Casualty Tests: Human capital, trade and development in India, China, Japan and other Asian countries between 1960 and 2002",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Factors of incidence in the fertility rate; an econometric study in the ES2 North-East area (Spain)",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Policy lessons from the Danish Model of wind energy development",
+    year: "",
+    medium: "DTU",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Europe‘s monetary policy challenges against the japanization of its economy: analysis on negative interest rates",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Emissions Trading: Is giving monetary value to emissions a solution?",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Gartner Hype Cycle: Autonomous Vehicles",
+    year: "",
+    medium: "DTU",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Cluster Analysis: Statistical Characterization",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Development of Spain‘s Industrialization Policy",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Spain´s Economic Policy with COVID-19",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Minority Influence Experiment: an approach to Moscovici’s experiment",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "EU´s role on Sub-Saharan conflicts",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Policy approaches to the drug market",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Brexit: Historical Implications, Costs and Agricultural and Fisheries Policy",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Australia: International Competitiveness",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Fiscal Federalism in Spain´s Autonomous Communities",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Corporate Tax in the Spanish State",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Foreign Direct Investment in Spain",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Complete financial statement report for Transoilulla S.L.",
+    year: "",
+    medium: "USC",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Reasons to Invest in the Spanish Economy",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Apple Inc.: organizational structure analysis",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "General Presence Assurance technology: iProov",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Banking 2.0",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Big Data and finance",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Machine Learning: supervised and unsupervised learning for financial services",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "mPayments",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "4th party and 3th party card schemes",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Cashback usage",
+    year: "",
+    medium: "SGH",
+    dimensions: "",
+    category: "Abstracts"
+},
+{
+    title: "Transport of Pollutants",
+    year: "",
+    medium: "DTU",
+    dimensions: "Develop and analyze a mathematical model that represents pollution being transported by means of groundwater flow.",
+    category: "Abstracts"
+},
+{
+    title: "Fermented Meat Alternatives",
+    year: "",
+    medium: "DTU",
+    dimensions: "Cultured meat as an ethical and sustainable alternative to conventional meat production.",
+    category: "Abstracts"
+},
+{
+    title: "Electrocatalytic Reduction of Carbon Dioxide",
+    year: "",
+    medium: "DTU",
+    dimensions: "Conversion of captured CO2 into fuels and other valuable products.",
+    category: "Abstracts"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/FIRST.jpg"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/08.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/1.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/02.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/03.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/4.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/04.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/5.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/05.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/06.heic"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/6.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/7.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/07.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/8.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/9.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/09.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/10.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/010.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/11.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/011.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/12.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/012.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/13.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/013.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/14.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/014.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/15.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/015.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/16.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/016.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/17.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/017.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/18.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/018.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/19.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/20.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/21.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/22.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/23.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/24.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/25.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/26.jpg"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/27.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/28.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/29.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/30.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/31.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/32.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/a.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/b.HEIC"
+},
+
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/b.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/c.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/d.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/e.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/f.HEIC"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/3.JPG"
+},
+
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto7.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto8.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto9.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto10.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto11.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto12.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/foto13.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/01.JPG"
+},
+{
+    title: "",
+    year: "",
+    medium: "",
+    dimensions: "",
+    category: "Photography",
+    image: "images/2.HEIC"
+},
+
+
+        ];
+
+        let currentArtworkIndex = 0;
+
+        // Loading Animation
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1000);
+        });
+
+        // Mobile Menu
+        const hamburger = document.getElementById('hamburger');
+        const nav = document.getElementById('nav');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Smooth Scrolling and Active Nav
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                window.scrollTo({
+                    top: targetSection.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+
+                // Close mobile menu
+                hamburger.classList.remove('active');
+                nav.classList.remove('active');
+
+                // Update active state
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+
+        // Update active nav on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Generate Featured Grid (first 6 artworks)
+        function generateFeaturedGrid() {
+            const grid = document.getElementById('featuredGrid');
+            const featured = artworks.slice(0, 6);
+
+            featured.forEach((artwork, index) => {
+                const card = document.createElement('div');
+                card.className = 'artwork-card';
+                // Use artwork.image if present; otherwise show Branhas.jpg as the featured thumbnail
+                const thumbSrc = artwork.image ? artwork.image : 'images/Branhas.jpg';
+                card.innerHTML = `
+                    <img class="artwork-image" src="${thumbSrc}" alt="${artwork.title}">
+                    <div class="artwork-overlay">
+                        <div class="artwork-title">${artwork.title}</div>
+                        <div class="artwork-year">${artwork.dimensions}</div>
+                    </div>
+                `;
+                card.addEventListener('click', () => openLightbox(index));
+                grid.appendChild(card);
+            });
+        }
+
+        // Generate Works Grid
+        function generateWorksGrid(filter = 'all') {
+            const grid = document.getElementById('worksGrid');
+            grid.innerHTML = '';
+            
+            const filtered = filter === 'all' 
+                ? artworks 
+                : artworks.filter(a => a.category === filter);
+            filtered.forEach((artwork, index) => {
+                const actualIndex = artworks.indexOf(artwork);
+                const item = document.createElement('div');
+                item.className = 'work-item';
+                // If dimensions is a URL, show a link labelled 'to the thesis'
+                const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
+                const dimLinkHTML = dimIsUrl ? `<div class="work-link"><a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a></div>` : '';
+                item.innerHTML = `
+                    <div class="artwork-image"></div>
+                    <div class="work-info">
+                        <div class="work-title">${artwork.title}</div>
+                        <div class="work-details">${artwork.year} | ${artwork.medium}</div>
+                        ${dimLinkHTML}
+                    </div>
+                `;
+                item.addEventListener('click', () => openLightbox(actualIndex));
+                grid.appendChild(item);
+            });
+        }
+
+        // Render Photography images directly
+        function renderPhotographySection() {
+            const section = document.getElementById('photographySection');
+            if (!section) return;
+            section.innerHTML = '';
+            const photographyArtworks = artworks.filter(a => a.category === 'Photography' && a.image);
+            if (photographyArtworks.length === 0) return;
+            const container = document.createElement('div');
+            container.className = 'photography-direct-grid';
+            photographyArtworks.forEach(artwork => {
+                const img = document.createElement('img');
+                img.src = artwork.image;
+                img.alt = artwork.title || 'Photography';
+                img.className = 'photography-direct-image';
+                container.appendChild(img);
+            });
+            section.appendChild(container);
+        }
+
+        // Call renderPhotographySection on load
+        window.addEventListener('DOMContentLoaded', renderPhotographySection);
+
+        // Filter Buttons
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                if (btn.dataset.filter === 'Photography') {
+                    const grid = document.getElementById('worksGrid');
+                    grid.innerHTML = '';
+                    const photographyArtworks = artworks.filter(a => a.category === 'Photography' && a.image);
+                    photographyArtworks.forEach((artwork, index) => {
+                        const actualIndex = artworks.indexOf(artwork);
+                        const item = document.createElement('div');
+                        item.className = 'work-item';
+                        item.innerHTML = `
+                            <img class="photography-direct-image" src="${artwork.image}" alt="${artwork.title || 'Photography'}">
+                        `;
+                        item.addEventListener('click', () => openLightbox(actualIndex));
+                        grid.appendChild(item);
+                    });
+                    // Hide the direct photography section to avoid duplication
+                    const photographySection = document.getElementById('photographySection');
+                    if (photographySection) photographySection.style.display = 'none';
+                } else if (btn.dataset.filter === 'Paintings') {
+                    const grid = document.getElementById('worksGrid');
+                    grid.innerHTML = '';
+                    const paintingArtworks = artworks.filter(a => a.category === 'Paintings' && a.image);
+                    paintingArtworks.forEach(artwork => {
+                        const actualIndex = artworks.indexOf(artwork);
+                        const item = document.createElement('div');
+                        item.className = 'work-item';
+                        item.innerHTML = `
+                            <img class="work-thumb" src="${artwork.image}" alt="${artwork.title || 'Painting'}">
+                            <div class="work-info">
+                                <div class="work-title">${artwork.title}</div>
+                            </div>
+                        `;
+                        item.addEventListener('click', () => openLightbox(actualIndex));
+                        grid.appendChild(item);
+                    });
+                    // Hide photography direct section to avoid duplication
+                    const photographySection = document.getElementById('photographySection');
+                    if (photographySection) photographySection.style.display = 'none';
+                } else {
+                    // Ensure photography section is visible again when filtering other categories
+                    const photographySection = document.getElementById('photographySection');
+                    if (photographySection) photographySection.style.display = '';
+                    generateWorksGrid(btn.dataset.filter);
+                }
+            });
+        });
+
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxClose = document.getElementById('lightboxClose');
+        const lightboxPrev = document.getElementById('lightboxPrev');
+        const lightboxNext = document.getElementById('lightboxNext');
+        const lightboxTitle = document.getElementById('lightboxTitle');
+        const lightboxDetails = document.getElementById('lightboxDetails');
+        const lightboxImage = document.getElementById('lightboxImage');
+
+        function openLightbox(index) {
+            currentArtworkIndex = index;
+            updateLightbox();
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function updateLightbox() {
+            const artwork = artworks[currentArtworkIndex];
+            lightboxTitle.textContent = artwork.title;
+            // If dimensions is a URL, render a clickable label 'to the thesis'
+            const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
+            const dimHTML = dimIsUrl ? `<a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a>` : (artwork.dimensions || '');
+            lightboxDetails.innerHTML = `
+                ${artwork.year}<br>
+                ${artwork.medium}<br>
+                ${dimHTML}
+            `;
+            // Show artwork image if present; otherwise show Branhas.jpg only for the first six featured items
+            const imgSrc = artwork.image ? artwork.image : (currentArtworkIndex < 6 ? 'images/Branhas.jpg' : null);
+            if (imgSrc) {
+                lightboxImage.innerHTML = `<img src="${imgSrc}" alt="${artwork.title}" style="width:100%;height:auto;object-fit:contain;">`;
+            } else {
+                lightboxImage.innerHTML = '';
+            }
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        
+        lightboxPrev.addEventListener('click', () => {
+            currentArtworkIndex = (currentArtworkIndex - 1 + artworks.length) % artworks.length;
+            updateLightbox();
+        });
+
+        lightboxNext.addEventListener('click', () => {
+            currentArtworkIndex = (currentArtworkIndex + 1) % artworks.length;
+            updateLightbox();
+        });
+
+        // Close lightbox on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                closeLightbox();
+            }
+        });
+
+        // Close lightbox on background click
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+
+        // Contact Form
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // --- Email sending configuration ---
+        // Option A (recommended): EmailJS (client-side) - sign up at https://www.emailjs.com
+        // Replace the placeholders below with your EmailJS user/service/template IDs.
+        const EMAILJS_USER_ID = 'REPLACE_WITH_YOUR_EMAILJS_USER_ID';
+        const EMAILJS_SERVICE_ID = 'REPLACE_WITH_YOUR_SERVICE_ID';
+        const EMAILJS_TEMPLATE_ID = 'REPLACE_WITH_YOUR_TEMPLATE_ID';
+
+        // Load EmailJS SDK dynamically (will initialize only if you replace the user id)
+        (function loadEmailJSSDK(){
+            const s = document.createElement('script');
+            s.src = 'https://cdn.emailjs.com/dist/email.min.js';
+            s.async = true;
+            s.onload = function(){
+                try{
+                    if (EMAILJS_USER_ID && EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' && window.emailjs){
+                        emailjs.init(EMAILJS_USER_ID);
+                    }
+                }catch(e){ /* ignore init errors */ }
+            };
+            document.head.appendChild(s);
+        })();
+
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            // Helper: show success message and reset
+            function showSuccess(){
+                successMessage.style.display = 'block';
+                contactForm.reset();
+                setTimeout(() => { successMessage.style.display = 'none'; }, 5000);
+            }
+
+            // Try EmailJS if configured
+            if (window.emailjs && EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' &&
+                EMAILJS_SERVICE_ID !== 'REPLACE_WITH_YOUR_SERVICE_ID' &&
+                EMAILJS_TEMPLATE_ID !== 'REPLACE_WITH_YOUR_TEMPLATE_ID') {
+                try {
+                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                        from_name: name,
+                        from_email: email,
+                        subject: subject,
+                        message: message,
+                        to_email: 'lucaslojoiglesias@gmail.com'
+                    });
+                    showSuccess();
+                    return;
+                } catch (err) {
+                    // If EmailJS fails, fall back to mailto
+                    console.warn('EmailJS send failed:', err);
+                }
+            }
+
+            // Fallback: open user's default mail client with prefilled values (mailto)
+            // This does not send automatically, it opens the mail composer.
+            const to = 'lucaslojoiglesias@gmail.com';
+            const mailSubject = encodeURIComponent(subject || `Message from ${name}`);
+            const mailBody = encodeURIComponent(
+                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+            );
+            const mailtoLink = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
+            // Open mail client
+            window.location.href = mailtoLink;
+        });
+
+        // Initialize
+        renderPhotographySection();
+        generateFeaturedGrid();
+        generateWorksGrid();
+    </script>
+</body>
+</html>

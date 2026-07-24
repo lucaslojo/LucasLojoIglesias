@@ -683,7 +683,7 @@
 
     <!-- Header -->
     <header>
-        <div class="artist-name">Lucas Lojo (Davila) Iglesias (Pampín)</div>
+        <div class="artist-name">Lucas Loxo (Davila) Iglesias (Pampín)</div>
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -887,1307 +887,467 @@ Politics and Economics of International Energy (SciencesPo), Quantum Mechanics (
         </div>
     </div>
 
-    <script>
-        // Artwork Data
-        const artworks = [
-            {
-                title: "Atelier en construcción",
-                year: "2025",
-                medium: "Oil on canvas",
-                dimensions: "150 x 100 cm",
-                category: "Paintings",
-                image: "Atelier.jpg"
-            },
-            {
-                title: "Room above Güell`s Garden",
-                year: "2025",
-                medium: "Oil on canvas",
-                dimensions: "100 x 73 cm",
-                category: "Paintings",
-                image: "Lina.jpg"
-            },
-            {
-                title: "As Brañas",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "120 x 90 cm",
-                category: "Paintings",
-                image: "Branhas.jpg",
-            },
-            
+<script>
+    // Artwork Data
+    // Keep your existing artworks array, but for any artwork that should have a carousel,
+    // change `image: "file.jpg"` to `images: ["file1.jpg", "file2.jpg", "file3.jpg"]`.
+    const artworks = [
+        {
+            title: "Atelier en construcción",
+            year: "2025",
+            medium: "Oil on canvas",
+            dimensions: "150 x 100 cm",
+            category: "Paintings",
+            images: ["Atelier.jpg", "Atelier.jpg", "Atelier.jpg"]
+        },
+        {
+            title: "Room above Güell`s Garden",
+            year: "2025",
+            medium: "Oil on canvas",
+            dimensions: "100 x 73 cm",
+            category: "Paintings",
+            image: "Lina.jpg"
+        },
+        {
+            title: "Comunismo",
+            year: "2025",
+            medium: "Mixed media on canvas",
+            dimensions: "120 x 90 cm",
+            category: "Paintings",
+            image: "Branhas.jpg"
+        },
 
-            {
-                title: "Fermentation Corp. (Migas)",
-                year: "2025",
-                medium: "R&D company in food fermentation, funded by the Bioinnovation Institute. Started by Leo Küehnemann and me at DTU`s Foodlab",
-                dimensions: "",
-                category: "Projects",
-                image: "Migas.JPG",
-            },
-            {
-                title: "Barriers to innovation in low-carbon technologies and innovation policies",
-                year: "2024",
-                medium: "DTU",
-                dimensions: "Thesis under the supervision of DTU Management and the Novo Nordisk Foundation Center for Biosustainability (DTU Biosustain). Accepted on the recommendation of Prof. julien Xavier Daubanes and Sumesh Sukumara, with Prof. Jens Weibezahn as an external supervisor from the Copenhagen Business School.: https://bit.ly/4o6Edoz",
-                category: "Abstracts",
-                image: "decisive.jxl",
-            },
-            {
-                title: "Urban Design",
-                year: "2025",
-                medium: "Architectural & urban project presented with the architect Marta Morato Costa through A Fundación Ria for the reurbanisation of Pobra do Caramiñal",
-                dimensions: "",
-                category: "Projects",
-                image: "pobra.JPG",
-            },
-            {
-                title: "DTU-CITA Graduate Project",
-                year: "2025",
-                medium: "Feasibility study on the architectural applications for additive fabrication of biopolymers. In collaboration with the Centre for Information Technology and Architecture at the Royal Danish Academy",
-                dimensions: "",
-                category: "Projects"
-            },
-             {
-                title: "1st Biome, DTU Biosustain",
-                year: "2025",
-                medium: "Gene Editing Microbiome Therapeutics Strategic Analysis, 1st Biome spin-off project at Morten Alexander Sommer group.",
-                dimensions: "",
-                category: "Projects",
-                image: "",
-            },
-            {
-                title: "DTU",
-                year: "",
-                medium: "Study of potential defense applications for air-warfare challenges, with DTU Defense",
-                dimensions: "",
-                category: "Projects"
-            },
-            {
-                title: "",
-                year: "",
-                medium: "Conducted strategic analysis on regional communication networks in Central-Easter Europe and the Russian Federation, focusing on optimizing information flow and security protocols",
-                dimensions: "",
-                category: "Projects"
-            },
-            {
-                title: "",
-                year: "",
-                medium: "Stakeholder engagement and strategic assessment of cooperation and investment mechanisms in Denmark-Iberia relations, with emphasis on enhancing critical information security and risk management processes",
-                dimensions: "",
-                category: "Projects"
-            },
-            
-            
-            
-            {
-                title: "Open Source: new methodological method of software development",
-                year: "2021",
-                medium: "USC",
-                dimensions: "https://www.researchgate.net/publication/373556139_Open_source_new_methodological_model_of_software_development",
-                category: "Abstracts"
-            },
-            {
-                title: "Cri du chat syndrome: characterization, genotype-phenotype review, diagnosis & genetic therapeutical approaches",
-                year: "2022",
-                medium: "DTU",
-                dimensions: "",
-                category: "Abstracts"
-            },
-            {
-                title: "Role of Communities in Post Conflict and Post Disaster Reconstruction",
-                year: "2025",
-                medium: "ETH Zürich",
-                dimensions: "",
-                category: "Abstracts"
-            },
-            {
-                title: "On Violence, in The Ministry for the Future",
-                year: "2025",
-                medium: "ETH Zürich",
-                dimensions: "",
-                category: "Abstracts"
-            },
-            {
-                title: "The scale and consequences of Hong Kong´s integration with mainland China",
-                year: "2023",
-                medium: "SGH",
-                dimensions: "",
-                category: "Abstracts"
-            },
-            {
-                title: "Debate on Drugs",
-                year: "2020",
-                medium: "",
-                dimensions: "100 x 140 cm",
-                category: "Abstracts"
-            },
-            {
-                title: "Luces de James Turrell",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "100 x 100 cm",
-                category: "Paintings",
-                image: "luces.jpg"
-            },
-            {
-                title: "Los Golfos",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "73 x 63 cm",
-                category: "Paintings",
-                image: "losgolfos.HEIC"
-            },
-            {
-                title: "A despedida",
-                year: "2025",
-                medium: "Oil & acrylic on canvas",
-                dimensions: "50 x 50 cm",
-                category: "Paintings",
-                image: "despedida.jpg"
-            },
-            {
-                title: "Boceto a las señoritas de Avignon",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "63 x 50 cm",
-                category: "Paintings",
-                image: "avignon.heic"
-            },
-            {
-                title: "Untitled",
-                year: "2025",
-                medium: "Oil & acrylic on canvas",
-                dimensions: "75 x 60 cm",
-                category: "Paintings",
-                image: "tristura.heic"
-            },
-            {
-                title: "A mirada dos nenos tras o cristal",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "100 x 70 cm",
-                category: "Paintings",
-                image: "mirada.jpg"
-            },
-            {
-                title: "Luces de Kerterminde",
-                year: "2024",
-                medium: "Mixed media on canvas",
-                dimensions: "70 x 60 cm",
-                category: "Paintings",
-                image: "Kerterminde.heic"
-            },
-            {
-                title: "La Société du spectacle",
-                year: "2025",
-                medium: "Mixed media on canvas",
-                dimensions: "100 x 100 cm",
-                category: "Paintings",
-                image: "spectacle.jpg"
-            },
-            {
-                title: "Installation View",
-                year: "2022",
-                medium: "Installation",
-                dimensions: "Variable dimensions",
-                category: "Installations"
-            },
-            {
-                title: "Textured Surface",
-                year: "2022",
-                medium: "Oil and sand on canvas",
-                dimensions: "110 x 130 cm",
-                category: "Mixed Media"
-            },
-            {
-                title: "Towards future net-zero climate resilient cities: lessons from Cooling Singapore, and beyond",
-                year: "2024",
-                medium: "ETH Zürich",
-                dimensions: "60 x 80 cm",
-                category: "Abstracts"
-            },
-            
-{
-    title: "Feasibility Studies of Energy Projects",
-    year: "",
-    medium: "DTU",
-    dimensions: "Evaluation of the feasibility of the Hesselø Offshore Wind Farm by analyzing its technical, regulatory, economic, and financial aspects.",
-    category: "Abstracts"
-},
-{
-    title: "Planning and Development of Wind Farms",
-    year: "",
-    medium: "DTU",
-    dimensions: "Wind Farm Project proposal in Oregon by analyzing technical, economic, financial, social, regulatory, and political landscape.",
-    category: "Abstracts"
-},
-{
-    title: "Econometric Models and Casualty Tests: Human capital, trade and development in India, China, Japan and other Asian countries between 1960 and 2002",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Factors of incidence in the fertility rate; an econometric study in the ES2 North-East area (Spain)",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Policy lessons from the Danish Model of wind energy development",
-    year: "",
-    medium: "DTU",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Europe‘s monetary policy challenges against the japanization of its economy: analysis on negative interest rates",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Emissions Trading: Is giving monetary value to emissions a solution?",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Gartner Hype Cycle: Autonomous Vehicles",
-    year: "",
-    medium: "DTU",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Cluster Analysis: Statistical Characterization",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Development of Spain‘s Industrialization Policy",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Spain´s Economic Policy with COVID-19",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Minority Influence Experiment: an approach to Moscovici’s experiment",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "EU´s role on Sub-Saharan conflicts",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Policy approaches to the drug market",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Brexit: Historical Implications, Costs and Agricultural and Fisheries Policy",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Australia: International Competitiveness",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Fiscal Federalism in Spain´s Autonomous Communities",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Corporate Tax in the Spanish State",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Foreign Direct Investment in Spain",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Complete financial statement report for Transoilulla S.L.",
-    year: "",
-    medium: "USC",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Reasons to Invest in the Spanish Economy",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Apple Inc.: organizational structure analysis",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "General Presence Assurance technology: iProov",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Banking 2.0",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Big Data and finance",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Machine Learning: supervised and unsupervised learning for financial services",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "mPayments",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "4th party and 3th party card schemes",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Cashback usage",
-    year: "",
-    medium: "SGH",
-    dimensions: "",
-    category: "Abstracts"
-},
-{
-    title: "Transport of Pollutants",
-    year: "",
-    medium: "DTU",
-    dimensions: "Develop and analyze a mathematical model that represents pollution being transported by means of groundwater flow.",
-    category: "Abstracts"
-},
-{
-    title: "Fermented Meat Alternatives",
-    year: "",
-    medium: "DTU",
-    dimensions: "Cultured meat as an ethical and sustainable alternative to conventional meat production.",
-    category: "Abstracts"
-},
-{
-    title: "Electrocatalytic Reduction of Carbon Dioxide",
-    year: "",
-    medium: "DTU",
-    dimensions: "Conversion of captured CO2 into fuels and other valuable products.",
-    category: "Abstracts"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "FIRST.jpg"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "08.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "1.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "02.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "03.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "4.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "04.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "5.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "05.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "06.heic"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "6.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "7.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "07.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "8.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "9.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "09.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "10.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "010.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "11.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "011.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "12.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "012.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "13.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "013.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "14.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "014.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "15.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "015.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "16.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "016.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "17.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "017.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "18.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "018.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "19.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "20.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "21.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "22.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "23.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "24.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "25.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "26.jpg"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "27.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "28.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "29.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "30.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "31.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "32.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "a.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "b.HEIC"
-},
+        // --- KEEP THE REST OF YOUR CURRENT ARTWORKS HERE ---
+        // You can leave single-image items as `image: "..."`.
+        // Only artworks with several photos need `images: ["...", "..."]`.
+    ];
 
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "b.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "c.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "d.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "e.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "f.HEIC"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "3.JPG"
-},
+    let currentArtworkIndex = 0;
+    let currentImageIndex = 0;
 
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto7.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto8.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto9.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto10.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto11.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto12.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "foto13.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "01.JPG"
-},
-{
-    title: "",
-    year: "",
-    medium: "",
-    dimensions: "",
-    category: "Photography",
-    image: "2.HEIC"
-},
+    function getArtworkImages(artwork) {
+        if (artwork.images && Array.isArray(artwork.images) && artwork.images.length) {
+            return artwork.images.filter(Boolean);
+        }
+        if (artwork.image) {
+            return [artwork.image];
+        }
+        return [];
+    }
 
+    function getArtworkCover(artwork) {
+        const images = getArtworkImages(artwork);
+        return images.length ? images[0] : 'Branhas.jpg';
+    }
 
-        ];
+    function artworkHasImage(artwork) {
+        return getArtworkImages(artwork).length > 0;
+    }
 
-        let currentArtworkIndex = 0;
+    // Loading Animation
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            document.getElementById('loader').classList.add('hidden');
+        }, 1000);
+    });
 
-        // Loading Animation
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 1000);
+    // Mobile Menu
+    const hamburger = document.getElementById('hamburger');
+    const nav = document.getElementById('nav');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+
+    // Smooth Scrolling and Active Nav
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+
+            window.scrollTo({
+                top: targetSection.offsetTop - 80,
+                behavior: 'smooth'
+            });
+
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+
+            navLinks.forEach(l => l.classList.remove('active'));
+            link.classList.add('active');
+        });
+    });
+
+    // Update active nav on scroll
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const sections = document.querySelectorAll('section');
+
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (scrollY >= (sectionTop - 100)) {
+                current = section.getAttribute('id');
+            }
         });
 
-        // Mobile Menu
-        const hamburger = document.getElementById('hamburger');
-        const nav = document.getElementById('nav');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            nav.classList.toggle('active');
-        });
-
-        // Smooth Scrolling and Active Nav
-        const navLinks = document.querySelectorAll('.nav-link');
-        
         navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    });
+
+    // Generate Featured Grid (first 6 artworks)
+    function generateFeaturedGrid() {
+        const grid = document.getElementById('featuredGrid');
+        grid.innerHTML = '';
+        const featured = artworks.slice(0, 6);
+
+        featured.forEach((artwork, index) => {
+            const card = document.createElement('div');
+            card.className = 'artwork-card';
+
+            const thumbSrc = getArtworkCover(artwork);
+
+            card.innerHTML = `
+                <img class="artwork-image" src="${thumbSrc}" alt="${artwork.title || 'Artwork'}">
+                <div class="artwork-overlay">
+                    <div class="artwork-title">${artwork.title || ''}</div>
+                    <div class="artwork-year">${artwork.dimensions || ''}</div>
+                </div>
+            `;
+
+            card.addEventListener('click', () => openLightbox(index));
+            grid.appendChild(card);
+        });
+    }
+
+    // Generate Works Grid
+    function generateWorksGrid(filter = 'all') {
+        const grid = document.getElementById('worksGrid');
+        grid.innerHTML = '';
+
+        const filtered = filter === 'all'
+            ? artworks
+            : artworks.filter(a => a.category === filter);
+
+        filtered.forEach(artwork => {
+            const actualIndex = artworks.indexOf(artwork);
+            const item = document.createElement('div');
+            item.className = 'work-item';
+
+            const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
+            const dimLinkHTML = dimIsUrl
+                ? `<div class="work-link"><a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a></div>`
+                : '';
+
+            const images = getArtworkImages(artwork);
+            const visualHTML = images.length
+                ? `<img class="work-thumb" src="${images[0]}" alt="${artwork.title || 'Artwork'}">`
+                : `<div class="artwork-image"></div>`;
+
+            item.innerHTML = `
+                ${visualHTML}
+                <div class="work-info">
+                    <div class="work-title">${artwork.title || ''}</div>
+                    <div class="work-details">${artwork.year || ''}${artwork.year && artwork.medium ? ' | ' : ''}${artwork.medium || ''}</div>
+                    ${dimLinkHTML}
+                </div>
+            `;
+
+            item.addEventListener('click', () => openLightbox(actualIndex));
+            grid.appendChild(item);
+        });
+    }
+
+    // Render Photography images directly
+    function renderPhotographySection() {
+        const section = document.getElementById('photographySection');
+        if (!section) return;
+
+        section.innerHTML = '';
+
+        const photographyArtworks = artworks.filter(
+            a => a.category === 'Photography' && artworkHasImage(a)
+        );
+
+        if (photographyArtworks.length === 0) return;
+
+        const container = document.createElement('div');
+        container.className = 'photography-direct-grid';
+
+        photographyArtworks.forEach(artwork => {
+            const img = document.createElement('img');
+            img.src = getArtworkCover(artwork);
+            img.alt = artwork.title || 'Photography';
+            img.className = 'photography-direct-image';
+            container.appendChild(img);
+        });
+
+        section.appendChild(container);
+    }
+
+    window.addEventListener('DOMContentLoaded', renderPhotographySection);
+
+    // Filter Buttons
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterButtons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            if (btn.dataset.filter === 'Photography') {
+                const grid = document.getElementById('worksGrid');
+                grid.innerHTML = '';
+
+                const photographyArtworks = artworks.filter(
+                    a => a.category === 'Photography' && artworkHasImage(a)
+                );
+
+                photographyArtworks.forEach(artwork => {
+                    const actualIndex = artworks.indexOf(artwork);
+                    const item = document.createElement('div');
+                    item.className = 'work-item';
+
+                    item.innerHTML = `
+                        <img class="photography-direct-image" src="${getArtworkCover(artwork)}" alt="${artwork.title || 'Photography'}">
+                    `;
+
+                    item.addEventListener('click', () => openLightbox(actualIndex));
+                    grid.appendChild(item);
                 });
 
-                // Close mobile menu
-                hamburger.classList.remove('active');
-                nav.classList.remove('active');
+                const photographySection = document.getElementById('photographySection');
+                if (photographySection) photographySection.style.display = 'none';
 
-                // Update active state
-                navLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
-            });
-        });
+            } else if (btn.dataset.filter === 'Paintings') {
+                const grid = document.getElementById('worksGrid');
+                grid.innerHTML = '';
 
-        // Update active nav on scroll
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
+                const paintingArtworks = artworks.filter(
+                    a => a.category === 'Paintings' && artworkHasImage(a)
+                );
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+                paintingArtworks.forEach(artwork => {
+                    const actualIndex = artworks.indexOf(artwork);
+                    const item = document.createElement('div');
+                    item.className = 'work-item';
 
-        // Generate Featured Grid (first 6 artworks)
-        function generateFeaturedGrid() {
-            const grid = document.getElementById('featuredGrid');
-            const featured = artworks.slice(0, 6);
+                    item.innerHTML = `
+                        <img class="work-thumb" src="${getArtworkCover(artwork)}" alt="${artwork.title || 'Painting'}">
+                        <div class="work-info">
+                            <div class="work-title">${artwork.title || ''}</div>
+                        </div>
+                    `;
 
-            featured.forEach((artwork, index) => {
-                const card = document.createElement('div');
-                card.className = 'artwork-card';
-                // Use artwork.image if present; otherwise show Branhas.jpg as the featured thumbnail
-                const thumbSrc = artwork.image ? artwork.image : 'Branhas.jpg';
-                card.innerHTML = `
-                    <img class="artwork-image" src="${thumbSrc}" alt="${artwork.title}">
-                    <div class="artwork-overlay">
-                        <div class="artwork-title">${artwork.title}</div>
-                        <div class="artwork-year">${artwork.dimensions}</div>
-                    </div>
-                `;
-                card.addEventListener('click', () => openLightbox(index));
-                grid.appendChild(card);
-            });
-        }
+                    item.addEventListener('click', () => openLightbox(actualIndex));
+                    grid.appendChild(item);
+                });
 
-        // Generate Works Grid
-        function generateWorksGrid(filter = 'all') {
-            const grid = document.getElementById('worksGrid');
-            grid.innerHTML = '';
-            
-            const filtered = filter === 'all' 
-                ? artworks 
-                : artworks.filter(a => a.category === filter);
-            filtered.forEach((artwork, index) => {
-                const actualIndex = artworks.indexOf(artwork);
-                const item = document.createElement('div');
-                item.className = 'work-item';
-                // If dimensions is a URL, show a link labelled 'to the thesis'
-                const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
-                const dimLinkHTML = dimIsUrl ? `<div class="work-link"><a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a></div>` : '';
-                item.innerHTML = `
-                    <div class="artwork-image"></div>
-                    <div class="work-info">
-                        <div class="work-title">${artwork.title}</div>
-                        <div class="work-details">${artwork.year} | ${artwork.medium}</div>
-                        ${dimLinkHTML}
-                    </div>
-                `;
-                item.addEventListener('click', () => openLightbox(actualIndex));
-                grid.appendChild(item);
-            });
-        }
+                const photographySection = document.getElementById('photographySection');
+                if (photographySection) photographySection.style.display = 'none';
 
-        // Render Photography images directly
-        function renderPhotographySection() {
-            const section = document.getElementById('photographySection');
-            if (!section) return;
-            section.innerHTML = '';
-            const photographyArtworks = artworks.filter(a => a.category === 'Photography' && a.image);
-            if (photographyArtworks.length === 0) return;
-            const container = document.createElement('div');
-            container.className = 'photography-direct-grid';
-            photographyArtworks.forEach(artwork => {
-                const img = document.createElement('img');
-                img.src = artwork.image;
-                img.alt = artwork.title || 'Photography';
-                img.className = 'photography-direct-image';
-                container.appendChild(img);
-            });
-            section.appendChild(container);
-        }
-
-        // Call renderPhotographySection on load
-        window.addEventListener('DOMContentLoaded', renderPhotographySection);
-
-        // Filter Buttons
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                if (btn.dataset.filter === 'Photography') {
-                    const grid = document.getElementById('worksGrid');
-                    grid.innerHTML = '';
-                    const photographyArtworks = artworks.filter(a => a.category === 'Photography' && a.image);
-                    photographyArtworks.forEach((artwork, index) => {
-                        const actualIndex = artworks.indexOf(artwork);
-                        const item = document.createElement('div');
-                        item.className = 'work-item';
-                        item.innerHTML = `
-                            <img class="photography-direct-image" src="${artwork.image}" alt="${artwork.title || 'Photography'}">
-                        `;
-                        item.addEventListener('click', () => openLightbox(actualIndex));
-                        grid.appendChild(item);
-                    });
-                    // Hide the direct photography section to avoid duplication
-                    const photographySection = document.getElementById('photographySection');
-                    if (photographySection) photographySection.style.display = 'none';
-                } else if (btn.dataset.filter === 'Paintings') {
-                    const grid = document.getElementById('worksGrid');
-                    grid.innerHTML = '';
-                    const paintingArtworks = artworks.filter(a => a.category === 'Paintings' && a.image);
-                    paintingArtworks.forEach(artwork => {
-                        const actualIndex = artworks.indexOf(artwork);
-                        const item = document.createElement('div');
-                        item.className = 'work-item';
-                        item.innerHTML = `
-                            <img class="work-thumb" src="${artwork.image}" alt="${artwork.title || 'Painting'}">
-                            <div class="work-info">
-                                <div class="work-title">${artwork.title}</div>
-                            </div>
-                        `;
-                        item.addEventListener('click', () => openLightbox(actualIndex));
-                        grid.appendChild(item);
-                    });
-                    // Hide photography direct section to avoid duplication
-                    const photographySection = document.getElementById('photographySection');
-                    if (photographySection) photographySection.style.display = 'none';
-                } else {
-                    // Ensure photography section is visible again when filtering other categories
-                    const photographySection = document.getElementById('photographySection');
-                    if (photographySection) photographySection.style.display = '';
-                    generateWorksGrid(btn.dataset.filter);
-                }
-            });
-        });
-
-        // Lightbox
-        const lightbox = document.getElementById('lightbox');
-        const lightboxClose = document.getElementById('lightboxClose');
-        const lightboxPrev = document.getElementById('lightboxPrev');
-        const lightboxNext = document.getElementById('lightboxNext');
-        const lightboxTitle = document.getElementById('lightboxTitle');
-        const lightboxDetails = document.getElementById('lightboxDetails');
-        const lightboxImage = document.getElementById('lightboxImage');
-
-        function openLightbox(index) {
-            currentArtworkIndex = index;
-            updateLightbox();
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeLightbox() {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function updateLightbox() {
-            const artwork = artworks[currentArtworkIndex];
-            lightboxTitle.textContent = artwork.title;
-            // If dimensions is a URL, render a clickable label 'to the thesis'
-            const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
-            const dimHTML = dimIsUrl ? `<a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a>` : (artwork.dimensions || '');
-            lightboxDetails.innerHTML = `
-                ${artwork.year}<br>
-                ${artwork.medium}<br>
-                ${dimHTML}
-            `;
-            // Show artwork image if present; otherwise show Branhas.jpg only for the first six featured items
-            const imgSrc = artwork.image ? artwork.image : (currentArtworkIndex < 6 ? 'Branhas.jpg' : null);
-            if (imgSrc) {
-                lightboxImage.innerHTML = `<img src="${imgSrc}" alt="${artwork.title}" style="width:100%;height:auto;object-fit:contain;">`;
             } else {
-                lightboxImage.innerHTML = '';
+                const photographySection = document.getElementById('photographySection');
+                if (photographySection) photographySection.style.display = '';
+                generateWorksGrid(btn.dataset.filter);
+            }
+        });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
+    const lightboxTitle = document.getElementById('lightboxTitle');
+    const lightboxDetails = document.getElementById('lightboxDetails');
+    const lightboxImage = document.getElementById('lightboxImage');
+
+    function openLightbox(index) {
+        currentArtworkIndex = index;
+        currentImageIndex = 0;
+        updateLightbox();
+        lightbox.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    function updateLightbox() {
+        const artwork = artworks[currentArtworkIndex];
+        const images = getArtworkImages(artwork);
+
+        lightboxTitle.textContent = artwork.title || '';
+
+        const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
+        const dimHTML = dimIsUrl
+            ? `<a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a>`
+            : (artwork.dimensions || '');
+
+        const imageCounterHTML = images.length > 1
+            ? `<br>Image ${currentImageIndex + 1} of ${images.length}`
+            : '';
+
+        lightboxDetails.innerHTML = `
+            ${artwork.year || ''}<br>
+            ${artwork.medium || ''}<br>
+            ${dimHTML}
+            ${imageCounterHTML}
+        `;
+
+        const imgSrc = images.length
+            ? images[currentImageIndex]
+            : (currentArtworkIndex < 6 ? 'Branhas.jpg' : null);
+
+        if (imgSrc) {
+            lightboxImage.innerHTML = `
+                <img src="${imgSrc}" alt="${artwork.title || 'Artwork'}" style="width:100%;height:auto;object-fit:contain;">
+            `;
+        } else {
+            lightboxImage.innerHTML = '';
+        }
+
+        const showNav = images.length > 1;
+        lightboxPrev.style.display = showNav ? 'block' : 'none';
+        lightboxNext.style.display = showNav ? 'block' : 'none';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightboxPrev.addEventListener('click', () => {
+        const artwork = artworks[currentArtworkIndex];
+        const images = getArtworkImages(artwork);
+        if (images.length <= 1) return;
+
+        currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+        updateLightbox();
+    });
+
+    lightboxNext.addEventListener('click', () => {
+        const artwork = artworks[currentArtworkIndex];
+        const images = getArtworkImages(artwork);
+        if (images.length <= 1) return;
+
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+        updateLightbox();
+    });
+
+    // Close lightbox on ESC key + arrow key navigation
+    document.addEventListener('keydown', (e) => {
+        if (!lightbox.classList.contains('active')) return;
+
+        if (e.key === 'Escape') {
+            closeLightbox();
+            return;
+        }
+
+        const artwork = artworks[currentArtworkIndex];
+        const images = getArtworkImages(artwork);
+        if (images.length <= 1) return;
+
+        if (e.key === 'ArrowLeft') {
+            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+            updateLightbox();
+        }
+
+        if (e.key === 'ArrowRight') {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            updateLightbox();
+        }
+    });
+
+    // Close lightbox on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+
+    const EMAILJS_USER_ID = 'REPLACE_WITH_YOUR_EMAILJS_USER_ID';
+    const EMAILJS_SERVICE_ID = 'REPLACE_WITH_YOUR_SERVICE_ID';
+    const EMAILJS_TEMPLATE_ID = 'REPLACE_WITH_YOUR_TEMPLATE_ID';
+
+    (function loadEmailJSSDK() {
+        const s = document.createElement('script');
+        s.src = 'https://cdn.emailjs.com/dist/email.min.js';
+        s.async = true;
+        s.onload = function () {
+            try {
+                if (
+                    EMAILJS_USER_ID &&
+                    EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' &&
+                    window.emailjs
+                ) {
+                    emailjs.init(EMAILJS_USER_ID);
+                }
+            } catch (e) {}
+        };
+        document.head.appendChild(s);
+    })();
+
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        function showSuccess() {
+            successMessage.style.display = 'block';
+            contactForm.reset();
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 5000);
+        }
+
+        if (
+            window.emailjs &&
+            EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' &&
+            EMAILJS_SERVICE_ID !== 'REPLACE_WITH_YOUR_SERVICE_ID' &&
+            EMAILJS_TEMPLATE_ID !== 'REPLACE_WITH_YOUR_TEMPLATE_ID'
+        ) {
+            try {
+                await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+                    from_name: name,
+                    from_email: email,
+                    subject: subject,
+                    message: message,
+                    to_email: 'lucaslojoiglesias@gmail.com'
+                });
+                showSuccess();
+                return;
+            } catch (err) {
+                console.warn('EmailJS send failed:', err);
             }
         }
 
-        lightboxClose.addEventListener('click', closeLightbox);
-        
-        lightboxPrev.addEventListener('click', () => {
-            currentArtworkIndex = (currentArtworkIndex - 1 + artworks.length) % artworks.length;
-            updateLightbox();
-        });
+        const to = 'lucaslojoiglesias@gmail.com';
+        const mailSubject = encodeURIComponent(subject || `Message from ${name}`);
+        const mailBody = encodeURIComponent(
+            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+        );
+        const mailtoLink = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
+        window.location.href = mailtoLink;
+    });
 
-        lightboxNext.addEventListener('click', () => {
-            currentArtworkIndex = (currentArtworkIndex + 1) % artworks.length;
-            updateLightbox();
-        });
-
-        // Close lightbox on ESC key
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
-                closeLightbox();
-            }
-        });
-
-        // Close lightbox on background click
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-                closeLightbox();
-            }
-        });
-
-        // Contact Form
-        const contactForm = document.getElementById('contactForm');
-        const successMessage = document.getElementById('successMessage');
-
-        // --- Email sending configuration ---
-        // Option A (recommended): EmailJS (client-side) - sign up at https://www.emailjs.com
-        // Replace the placeholders below with your EmailJS user/service/template IDs.
-        const EMAILJS_USER_ID = 'REPLACE_WITH_YOUR_EMAILJS_USER_ID';
-        const EMAILJS_SERVICE_ID = 'REPLACE_WITH_YOUR_SERVICE_ID';
-        const EMAILJS_TEMPLATE_ID = 'REPLACE_WITH_YOUR_TEMPLATE_ID';
-
-        // Load EmailJS SDK dynamically (will initialize only if you replace the user id)
-        (function loadEmailJSSDK(){
-            const s = document.createElement('script');
-            s.src = 'https://cdn.emailjs.com/dist/email.min.js';
-            s.async = true;
-            s.onload = function(){
-                try{
-                    if (EMAILJS_USER_ID && EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' && window.emailjs){
-                        emailjs.init(EMAILJS_USER_ID);
-                    }
-                }catch(e){ /* ignore init errors */ }
-            };
-            document.head.appendChild(s);
-        })();
-
-        contactForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const subject = document.getElementById('subject').value.trim();
-            const message = document.getElementById('message').value.trim();
-
-            // Helper: show success message and reset
-            function showSuccess(){
-                successMessage.style.display = 'block';
-                contactForm.reset();
-                setTimeout(() => { successMessage.style.display = 'none'; }, 5000);
-            }
-
-            // Try EmailJS if configured
-            if (window.emailjs && EMAILJS_USER_ID !== 'REPLACE_WITH_YOUR_EMAILJS_USER_ID' &&
-                EMAILJS_SERVICE_ID !== 'REPLACE_WITH_YOUR_SERVICE_ID' &&
-                EMAILJS_TEMPLATE_ID !== 'REPLACE_WITH_YOUR_TEMPLATE_ID') {
-                try {
-                    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
-                        from_name: name,
-                        from_email: email,
-                        subject: subject,
-                        message: message,
-                        to_email: 'lucaslojoiglesias@gmail.com'
-                    });
-                    showSuccess();
-                    return;
-                } catch (err) {
-                    // If EmailJS fails, fall back to mailto
-                    console.warn('EmailJS send failed:', err);
-                }
-            }
-
-            // Fallback: open user's default mail client with prefilled values (mailto)
-            // This does not send automatically, it opens the mail composer.
-            const to = 'lucaslojoiglesias@gmail.com';
-            const mailSubject = encodeURIComponent(subject || `Message from ${name}`);
-            const mailBody = encodeURIComponent(
-                `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-            );
-            const mailtoLink = `mailto:${to}?subject=${mailSubject}&body=${mailBody}`;
-            // Open mail client
-            window.location.href = mailtoLink;
-        });
-
-        // Initialize
-        renderPhotographySection();
-        generateFeaturedGrid();
-        generateWorksGrid();
-    </script>
+    // Initialize
+    renderPhotographySection();
+    generateFeaturedGrid();
+    generateWorksGrid();
+</script>
 </body>
 </html>

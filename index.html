@@ -737,7 +737,6 @@
         <section id="works">
             <h2 class="section-title">Works</h2>
             <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Works</button>
                 <button class="filter-btn" data-filter="Paintings">Paintings</button>
                 <button class="filter-btn" data-filter="Abstracts">Writings</button>
                 <button class="filter-btn" data-filter="Projects">Drawings</button>
@@ -1858,44 +1857,41 @@
             grid.appendChild(card);
         });
     }
+// Generate Works Grid
+function generateWorksGrid(filter = 'Paintings') {
+    const grid = document.getElementById('worksGrid');
+    grid.innerHTML = '';
 
-    // Generate Works Grid
-    function generateWorksGrid(filter = 'all') {
-        const grid = document.getElementById('worksGrid');
-        grid.innerHTML = '';
+    const filtered = artworks.filter(a => a.category === filter);
 
-        const filtered = filter === 'all'
-            ? artworks
-            : artworks.filter(a => a.category === filter);
+    filtered.forEach(artwork => {
+        const actualIndex = artworks.indexOf(artwork);
+        const item = document.createElement('div');
+        item.className = 'work-item';
 
-        filtered.forEach(artwork => {
-            const actualIndex = artworks.indexOf(artwork);
-            const item = document.createElement('div');
-            item.className = 'work-item';
+        const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
+        const dimLinkHTML = dimIsUrl
+            ? `<div class="work-link"><a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a></div>`
+            : '';
 
-            const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
-            const dimLinkHTML = dimIsUrl
-                ? `<div class="work-link"><a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a></div>`
-                : '';
+        const images = getArtworkImages(artwork);
+        const visualHTML = images.length
+            ? `<img class="work-thumb" src="${images[0]}" alt="${artwork.title || 'Artwork'}">`
+            : `<div class="artwork-image"></div>`;
 
-            const images = getArtworkImages(artwork);
-            const visualHTML = images.length
-                ? `<img class="work-thumb" src="${images[0]}" alt="${artwork.title || 'Artwork'}">`
-                : `<div class="artwork-image"></div>`;
+        item.innerHTML = `
+            ${visualHTML}
+            <div class="work-info">
+                <div class="work-title">${artwork.title || ''}</div>
+                <div class="work-details">${artwork.year || ''}${artwork.year && artwork.medium ? ' | ' : ''}${artwork.medium || ''}</div>
+                ${dimLinkHTML}
+            </div>
+        `;
 
-            item.innerHTML = `
-                ${visualHTML}
-                <div class="work-info">
-                    <div class="work-title">${artwork.title || ''}</div>
-                    <div class="work-details">${artwork.year || ''}${artwork.year && artwork.medium ? ' | ' : ''}${artwork.medium || ''}</div>
-                    ${dimLinkHTML}
-                </div>
-            `;
-
-            item.addEventListener('click', () => openLightbox(actualIndex));
-            grid.appendChild(item);
-        });
-    }
+        item.addEventListener('click', () => openLightbox(actualIndex));
+        grid.appendChild(item);
+    });
+}
 
     // Render Photography images directly
     function renderPhotographySection() {

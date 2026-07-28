@@ -498,6 +498,7 @@
             margin-left: auto;
             margin-right: auto;
             text-align: left;
+            white-space: pre-line;
         }
 
         .lightbox-close {
@@ -2023,43 +2024,47 @@ function generateWorksGrid(filter = 'Paintings') {
         document.body.style.overflow = '';
     }
 
-    function updateLightbox() {
-        const artwork = artworks[currentArtworkIndex];
-        const images = getArtworkImages(artwork);
+function updateLightbox() {
+    const artwork = artworks[currentArtworkIndex];
+    const images = getArtworkImages(artwork);
 
-        lightboxTitle.textContent = artwork.title || '';
+    lightboxTitle.textContent = artwork.title || '';
 
-        const dimIsUrl = artwork.dimensions && /^https?:\/\//i.test(artwork.dimensions);
-        const dimHTML = dimIsUrl
-            ? `<a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a>`
-            : (artwork.dimensions || '');
+    const dimIsUrl = artwork.dimensions && /^https?:/i.test(artwork.dimensions);
+    const dimHTML = dimIsUrl
+        ? `<a href="${artwork.dimensions}" target="_blank" rel="noopener noreferrer">to the thesis</a>`
+        : (artwork.dimensions || '');
 
-        const imageCounterHTML = images.length > 1
-            ? `<br>Image ${currentImageIndex + 1} of ${images.length}`
-            : '';
+    const imageCounterHTML = images.length > 1
+        ? `<br>Image ${currentImageIndex + 1} of ${images.length}`
+        : '';
 
-        const descriptionHTML = artwork.description
-            ? `<br><br><div class="lightbox-description">${artwork.description}</div>`
-            : '';
-        
-        lightboxDetails.innerHTML = `${artwork.year}<br>${artwork.medium}<br>${dimHTML}${imageCounterHTML}${descriptionHTML}`;
+    const descriptionHTML = artwork.description
+        ? `<div class="lightbox-description">${artwork.description}</div>`
+        : '';
 
-        const imgSrc = images.length
-            ? images[currentImageIndex]
-            : (currentArtworkIndex < 6 ? 'Branhas.jpg' : null);
+    lightboxDetails.innerHTML = `
+        ${artwork.year || ''}<br>
+        ${artwork.medium || ''}<br>
+        ${dimHTML}
+        ${imageCounterHTML}
+        ${descriptionHTML}
+    `;
 
-        if (imgSrc) {
-            lightboxImage.innerHTML = `
-                <img src="${imgSrc}" alt="${artwork.title || 'Artwork'}">
-            `;
-        } else {
-            lightboxImage.innerHTML = '';
-        }
+    const imgSrc = images.length
+        ? images[currentImageIndex]
+        : (currentArtworkIndex === 6 ? 'Branhas.jpg' : null);
 
-        const showNav = images.length > 1;
-        lightboxPrev.style.display = showNav ? 'block' : 'none';
-        lightboxNext.style.display = showNav ? 'block' : 'none';
+    if (imgSrc) {
+        lightboxImage.innerHTML = `<img src="${imgSrc}" alt="${artwork.title || 'Artwork'}">`;
+    } else {
+        lightboxImage.innerHTML = '';
     }
+
+    const showNav = images.length > 1;
+    lightboxPrev.style.display = showNav ? 'block' : 'none';
+    lightboxNext.style.display = showNav ? 'block' : 'none';
+}
 
     lightboxClose.addEventListener('click', closeLightbox);
 

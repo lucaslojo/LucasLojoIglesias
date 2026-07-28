@@ -488,6 +488,18 @@
             line-height: 1.8;
         }
 
+        
+        .lightbox-description {
+            margin-top: 18px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #333333;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
         .lightbox-close {
             position: fixed;
             top: 30px;
@@ -2018,12 +2030,11 @@ function generateWorksGrid(filter = 'Paintings') {
             ? `<br>Image ${currentImageIndex + 1} of ${images.length}`
             : '';
 
-        lightboxDetails.innerHTML = `
-            ${artwork.year || ''}<br>
-            ${artwork.medium || ''}<br>
-            ${dimHTML}
-            ${imageCounterHTML}
-        `;
+        const descriptionHTML = artwork.description
+            ? `<br><br><div class="lightbox-description">${artwork.description}</div>`
+            : '';
+        
+        lightboxDetails.innerHTML = `${artwork.year}<br>${artwork.medium}<br>${dimHTML}${imageCounterHTML}${descriptionHTML}`;
 
         const imgSrc = images.length
             ? images[currentImageIndex]
